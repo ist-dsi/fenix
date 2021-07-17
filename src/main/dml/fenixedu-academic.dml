@@ -692,6 +692,7 @@ valueType org.fenixedu.academic.domain.accounting.DueDateAmountMap as DueDateAmo
 	    boolean improvement;
 	    boolean special;
 	    boolean specialAuthorization;
+	    boolean extraordinary;
 	}
 	
 	class EnrolmentEvaluation  {
@@ -742,6 +743,9 @@ valueType org.fenixedu.academic.domain.accounting.DueDateAmountMap as DueDateAmo
         }
         
         class EnrolmentPeriodInSpecialSeasonEvaluations extends EnrolmentPeriod {
+        }
+
+        class EnrolmentPeriodInExtraordinarySeasonEvaluations extends EnrolmentPeriod {
         }
 
         class EnrolmentPeriodInImprovementOfApprovedEnrolment extends EnrolmentPeriod {
@@ -1877,6 +1881,10 @@ valueType org.fenixedu.academic.domain.accounting.DueDateAmountMap as DueDateAmo
             }
 
             class accounting.postingRules.SpecialSeasonEnrolmentPR extends accounting.postingRules.GenericSingleEntryTypePR {
+                Money fixedAmount;
+            }
+
+            class accounting.postingRules.ExtraordinarySeasonEnrolmentPR extends accounting.postingRules.GenericSingleEntryTypePR {
                 Money fixedAmount;
             }
 
